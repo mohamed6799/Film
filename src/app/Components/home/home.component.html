@@ -1,0 +1,67 @@
+
+<div class="container">
+    <input type="checkbox" id="menuend" style="display:none">
+    <div class="page">
+        <nav>
+            <ul>
+                <li><a routerLink="movies" routerLinkActive="active">Movies</a></li>
+                <li><a routerLink="series" routerLinkActive="active">Series</a></li>
+            </ul>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="menu_end">
+        <label class="Icon" for="menuend"></label>
+        <div class="menuSS">
+            <div class="units">
+                <input type="checkbox"  id="myMenu" style="display:none">
+                <div class="profile">
+                    <div class="view">
+                        <div class="dataProfile">
+                            <div class="data">
+                                <img src="../../../assets/img/profile.jpg" alt="">
+                                <div class="text">
+                                    <h3>Mohamed Moris</h3>
+                                    <p>m.morsi.jr@gmail.com</p>
+                                </div>
+                        </div>
+                        <div class="icon"><label for="myMenu"><i class="fa-solid fa-chevron-down"></i></label></div>
+                        </div>
+                    </div>
+                    <div class="hide">
+                        <ul>
+                            <li><a href=""><i class="fa-solid fa-heart" style="color: #ea1c24;"></i>Favorite</a></li>
+                            <li><a href=""> <i class="fa-solid fa-play" style="color:rgb(21, 21, 82)"></i> Want to watch it</a></li>
+                            <li><a href=""><i class="fa-solid fa-stop" style="color:rgb(21, 21, 82)"></i> Watched</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dataPerson">
+                    <div class="watch">
+                        <div class="title">
+                            <h3>Favorite</h3>
+                            <a href="">see more</a>
+                        </div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="watch">
+                        <div class="title">
+                            <h3>Want to watch it</h3>
+                            <a href="">see more</a>
+                        </div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="watch">
+                        <div class="title">
+                            <h3>Watched</h3>
+                            <a href="">see more</a>
+                        </div>
+                        <div class="content"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<div class="container">
+    <nav>
+        <div class="logo">
+            <img src="../../../assets/img/logonetflex.png" alt="">
+        </div>
+        <div class="menu">
+            <a routerLink="/sign/signup" class="signup">Sign Up</a>
+        </div>
+    </nav>
+    <div class="head">
+        <div class="text">
+            <h1>
+                Unlimited movies, TV <br> shows, and more
+            </h1>
+            <h2>
+                Plans now start at EGP70/month.
+            </h2>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <form [formGroup]="Login">
+                <div class="email">
+                    <input type="email" placeholder="Email Address" formControlName = "email">
+                    <p>email not valid</p>
+                </div>
+               <div class="pass">
+                <input type="password"  placeholder="Password" formControlName = "password">
+                <p> password should between 8 and 15 letter and number </p>
+               </div>
+                <button (click)="LoginFunc()" >SUBMIT <i class="fa-solid fa-angles-right"></i></button>
+                <!--[disabled] = "Login?.invalid"-->
+            </form>
+        </div>
+    </div>
+    <div class="offers">
+        <div class="item">
+            <div class="info">
+                <h1>Enjoy on your TV</h1>
+                <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+            </div>
+            <div class="img"><img src="../../../assets/img/firstscreen.png" alt=""></div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <h1>Watch everywhere</h1>
+                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+            <div class="img">
+                <img src="../../../assets/img/secondscreen.png" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <h1>Create profiles for kids</h1>
+                <p>Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+            </div>
+            <div class="img"><img src="../../../assets/img/thirdscreen.png" alt=""></div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <h1>Download your shows to watch offline</h1>
+                <p>Save your favorites easily and always have something to watch.</p>
+            </div>
+            <div class="img"><img src="../../../assets/img/fourscreen.png" alt=""></div>
+        </div>
+    </div>
+    <div class="information">
+        <h2>Frequently Asked Questions</h2>
+        <div class="units">
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="One">
+                <label for="One"  class="show">
+                    <h1>What is Netflix ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.
+                    </p>
+                    <p>
+                        You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!
+                    </p>
+                </div>
+            </div>
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="Two">
+                <label for="Two"  class="show">
+                    <h1>How much does Netflix cost ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from EGP70 to EGP165 a month. No extra costs, no contracts.
+                    </p>
+                </div>
+            </div>
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="Three">
+                <label for="Three"  class="show">
+                    <h1>Where can I watch ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+                    </p>
+                    <p>
+                        You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+                    </p>
+                </div>
+            </div>
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="Four">
+                <label for="Four"  class="show">
+                    <h1>How do I cancel ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+                    </p>
+                </div>
+            </div>
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="Five">
+                <label for="Five"  class="show">
+                    <h1>What can I watch on Netflix ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+                    </p>
+                </div>
+            </div>
+            <div class="unit">
+                <input type="checkbox" class="checkbox" id="Six">
+                <label for="Six"  class="show">
+                    <h1>Is Netflix good for kids ? </h1>
+                    <i class="fa-solid fa-plus"></i>
+                </label>
+                <div class="hide">
+                    <p>
+                        The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.
+                    </p>
+                    <p>
+                        Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,310 @@
+.container{
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+    @media(max-width:450px){
+        padding: 20px 20px 20px 10px;
+    }
+    .head{
+        margin: 20px 0;
+        .units{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media(max-width:700px){
+                display: block;
+                
+            }
+           .unit{
+            width: 49%;
+            @media(max-width:700px){
+                width: 90%;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+            @media(max-width:450px){
+                width: 100%;
+            }
+            
+            .item{
+                border-radius: 10px;
+                position: relative;
+                img{
+                    border-radius: 10px;
+                    width: 100%;
+                    filter: brightness(0.7);
+                }
+                .info{
+                    position:absolute;
+                    bottom: 0;
+                    width:100%;
+                    padding: 20px;
+                    @media(max-width:1400px){
+                        padding: 20px 10px;
+                    }
+                    h1{
+                        margin-bottom: 3px;
+                        @media(max-width:450px){
+                            font-size: 20px;
+                            margin-bottom: 0;
+                        }
+                    }
+                    h3{
+                        font-size: 18px;
+                    }
+                    .rated{
+                        margin: 5px 0;
+                        @media(max-width:450px){
+                            margin:  0;
+                        }
+                        i{
+                            color:gold;
+                            font-size: 25px;
+                            margin-right: 3px;
+                            @media(max-width:1400px){
+                                font-size: 18px;
+                            }
+                            @media(max-width:450px){
+                                font-size: 14px;
+                                margin-right: 2px;
+                            }
+                        }
+                        span{
+                            margin-left: 10px;
+                            font-size: 25px;
+                            @media(max-width:1400px){
+                                font-size: 20px;
+                            }
+                            @media(max-width:450px){
+                                font-size: 16px;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                    .bottom{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .type{
+                                        
+                            ul{
+                                li{
+                                    display:inline-block;
+                                    padding: 5px ;
+                                    border-radius: 5px ;
+                                    margin-right: 5px;
+                                    font-size: 18px;
+                                    &:nth-of-type(1){
+                                        background-color: blue;
+                                    }
+                                    &:nth-of-type(2){
+                                        background-color: #eb1d25;
+                                    }
+                                    
+                                    &:nth-of-type(n+3){
+                                        display: none;
+                                    }
+                                    @media(max-width:1400px){
+                                        font-size: 15px;
+                                        padding: 5px ;
+                                        
+                                    }
+                                    @media(max-width:450px){
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                        .buttonVisite{
+                            a{
+                                display: block;
+                                padding: 10px 15px;
+                                background-color:#eb1d25;
+                                color:white;
+                                font-size: 20px;
+                                border-radius: 5px;
+                                transition: 0.3s ease;
+                                &:hover{
+                                    background-color: #9e1318;
+                                }
+                                @media(max-width:1400px){
+                                    padding: 5px 10px;
+                                    font-size: 17px;
+
+                                }
+                            }
+                    }
+                    }
+                }
+            }
+           }
+        }
+    }
+    .content{
+        margin: 50px 0; 
+        .units{
+            .unit{
+                .headItem{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    
+                    a{
+                        font-size: 18px;
+                        color:#636363;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                
+                .items{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    @media(max-width:950px){
+                        justify-content: start;
+                    }
+                    @media(max-width:650px){
+                        justify-content: space-between;
+                    }
+                    .item{
+                        width: 19%;
+                        margin-bottom: 20px;
+                        position: relative;
+                        &:hover{
+                            .info{
+                                @media(min-width:900px){
+                                    .descs{
+                                        max-height:500px !important;
+                                        
+                                }
+                                }
+                        }
+                    }
+                        img{
+                            width: 100%;
+                        }
+                        .info{
+                            padding:5px;
+                            background: linear-gradient(0deg , black 40%, transparent);
+                            position: absolute;
+                            left: 0;
+                            overflow: hidden;
+                            width: 100%;
+                            color: white;
+                            bottom:0;
+                            h1{
+                                font-size: 22px;
+                                margin-bottom: 3px;
+                                line-height: 22px;
+                                text-shadow: 0 0 5px black;
+                                @media(max-width:1360px){
+                                    font-size: 18px;
+                                }
+                            }
+                            .descs{
+                                max-height: 0 ;
+                                overflow: hidden;
+                                transition: 0.5s ease-in-out !important;
+                                font-size: 15px;
+                                @media(max-width:900px){
+                                    max-height: 500px !important;
+                                    
+                                }
+                                @media(max-width:1360px){
+                                    font-size: 12px;
+                                    .rated{
+                                        i{
+                                            font-size: 17px;
+                                        }
+                                        span{
+                                            font-size: 19px;
+                                        }
+                                    }
+                                    .year{
+                                        font-size: 16px;
+                                    }
+                                    .type{
+                                        ul{
+                                            li{
+                                                font-size: 5px;
+                                                padding: 2px 3px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .rated{
+                                    margin-bottom: 5px;
+                                    i{
+                                        color:gold;
+                                        font-size: 20px;
+                                    }
+                                    span{
+                                        font-size: 22px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                .year{
+                                    font-size: 18px;
+                                }
+                                .type{
+                                    
+                                    ul{
+                                        
+                                        li{
+                                            display:inline-block;
+                                            padding: 5px ;
+                                            border-radius: 5px ;
+                                            margin-right: 10px;
+                                            margin-bottom: 5px;
+                                            font-size: 15px;
+                                            &:nth-of-type(1){
+                                                background-color: blue;
+                                            }
+                                            &:nth-of-type(2){
+                                                background-color: red;
+                                            }
+                                            &:nth-of-type(n+3){
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @media(max-width:1400px){
+                            width: 22%;
+                            &:last-child{
+                                display: none;
+                            }
+                            
+                        }
+                        @media(max-width:950px){
+                            width: 31%;
+                            margin-right: 12px;
+                            &:last-child{
+                                display: block;
+                            }
+
+                        }
+                        @media(max-width:650px){
+                            width: 48%;
+                            margin-right: 0;
+                            &:last-child{
+                                display: none;
+                            }
+                        }
+                        @media(max-width:450px){
+                            width: 100%;
+                            &:last-child{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

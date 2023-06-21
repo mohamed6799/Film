@@ -1,0 +1,271 @@
+<div class="container">
+    <div class="moviePage">
+        <div class="movies" *ngIf="(TheSeries | inputSearch:InputSearch).length > 0 ; else other">
+            <div class="AllItem" >
+                <div class="item"  *ngFor="let movie of TheSeries |inputSearch : InputSearch ">
+                    
+                        <img [src]="halfImg+movie.poster_path" alt="">
+                        <div class="info">
+                                <h3 class="date">{{movie.first_air_date|date:'yyyy'}}</h3>
+                                <div class="rated">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i>{{movie.vote_average/2|number:'1.0-1'}}/5</i>
+                                </div>
+                                <div class="fav_data">
+                                    <div class="favorite">
+                                        <input type="checkbox" class="fav{{movie.id}}" (click)="favoriteList(movie.id)" id="fav{{movie.id}}" style="display:none;">
+                                        <label for="fav{{movie.id}}">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </label>
+                                    </div>
+                                    <div class="dataWatch">
+                                        <input type="checkbox" id="icon{{movie.id}}" style="display:none">
+                                            <label class="icon" for="icon{{movie.id}}">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </label>
+                                        <div class="menu">
+                                            <ul>
+                                                <li ><input type="checkbox" id="A{{movie.id}}" class="I{{movie.id}}" (click)="funcList(movie.id , 'A')"  style="display:none"><label for="A{{movie.id}}"><i class="fa-solid fa-play"></i> Want to watch it</label></li>
+                                                <li><input type="checkbox" id="B{{movie.id}}" class="I{{movie.id}}" (click)="funcList(movie.id , 'B')"   style="display:none"><label for="B{{movie.id}}"><i class="fa-solid fa-stop"></i>Watched</label></li>
+                                                <li><input type="checkbox" id="C{{movie.id}}" class="I{{movie.id}}" (click)="funcList(movie.id , 'C')"   style="display:none"><label for="C{{movie.id}}"><i class="fa-solid fa-pause" ></i>Watching now</label></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="buttonVisitMovie">
+                                    <a [routerLink]="['/shows/serieDetails',movie.id]">Watch It</a> 
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #other >
+            <div class="other">
+                <h1 >There are no results for this search ...</h1>
+            </div>
+        </ng-template>
+        <div class="pages">
+            <ul>
+                <li class="active"><a (click)="page(1)">1</a></li>
+                <li><a (click)="page(3)">2</a></li>
+                <li><a (click)="page(5)">3</a></li>
+                <li><a (click)="page(7)">4</a></li>
+                <li><a (click)="page(9)">5</a></li>
+                <li><a (click)="page(11)">6</a></li>
+                <li><a (click)="page(13)">7</a></li>
+                <li><a (click)="page(15)">8</a></li>
+                <li><a (click)="page(17)">9</a></li>
+                <li><a (click)="page(19)">10</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu_end">
+        <div class="units">
+            <input type="checkbox"  id="myMenu" style="display:none">
+            <div class="profile">
+                <div class="view">
+                    <div class="dataProfile">
+                        <div class="data">
+                            <img src="../../../assets/img/profile.jpg" alt="">
+                            <div class="text">
+                                <h3>Mohamed Moris</h3>
+                                <p>m.morsi.jr@gmail.com</p>
+                            </div>
+                    </div>
+                    <div class="icon"><label for="myMenu"><i class="fa-solid fa-chevron-down"></i></label></div>
+                    </div>
+                </div>
+                <div class="hide">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-heart" style="color: #ea1c24;"></i>Favorite</a></li>
+                        <li><a href=""><i class="fa-solid fa-pause" style="color:rgb(21, 21, 82)"></i>watching now</a></li>
+                        <li><a href=""> <i class="fa-solid fa-play" style="color:rgb(21, 21, 82)"></i> Want to watch it</a></li>
+                        <li><a href=""><i class="fa-solid fa-stop" style="color:rgb(21, 21, 82)"></i> Watched</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search">
+                <div class="cot">
+                    <button disabled><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" [(ngModel)]="InputSearch" placeholder="search..." >
+                </div>
+            </div>
+            
+            <div class="genres">
+                <div class="items">
+                    <h3>Genres</h3>
+                    <ul>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(28)" class="C28" id="Action" style="display:none">
+                                <label for="Action">
+                                    <p>Action</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(10751)" class="C10751" id="Family" style="display:none">
+                                <label for="Family">
+                                    <p>Family</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(35)" class="C35" id="Comedy" style="display:none">
+                                <label for="Comedy">
+                                    <p>Comedy</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(16)" class="C16" id="Animation" style="display:none">
+                                <label for="Animation">
+                                    <p>Animation</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(10749)" class="C10749" id="Romance" style="display:none">
+                                <label for="Romance">
+                                    <p>Romance</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(12)" class="C12" id="Adventure" style="display:none">
+                                <label for="Adventure">
+                                    <p>Adventure</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(18)" class="C18" id="Drame" style="display:none">
+                                <label for="Drame">
+                                    <p>Drame</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(878)" class="C878" id="Sci_Fic" style="display:none">
+                                <label for="Sci_Fic">
+                                    <p>Sci Fic</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(80)" class="C80" id="Crime" style="display:none">
+                                <label for="Crime">
+                                    <p>Crime</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox"  (click)="GenresClick(27)" class="C27" id="Horror" style="display:none" >
+                                <label for="Horror">
+                                    <p>Horror</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(53)" class="C53" id="Thriller" style="display:none">
+                                <label for="Thriller">
+                                    <p>Thriller</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <input type="checkbox" (click)="GenresClick(10752)" class="C10752" id="War" style="display:none">
+                                <label for="War">
+                                    <p>War</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dataPerson">
+                <div class="watch">
+                    <div class="title">
+                        <h3>Favorite</h3>
+                        <a href="">see more</a>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="watch">
+                    <div class="title">
+                        <h3>Want to watch it</h3>
+                        <a href="">see more</a>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="watch">
+                    <div class="title">
+                        <h3>Watched</h3>
+                        <a href="">see more</a>
+                    </div>
+                    <div class="content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

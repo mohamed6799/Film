@@ -1,0 +1,152 @@
+.container{
+    background-color:#0d0c0f;
+    height: 100vh;
+    color:white;
+    display: flex;
+    .active{
+        .text{
+            color:white !important;
+        }
+        .icon{
+            color:#eb1d25 !important;
+        }
+    }
+    .menu{
+        display: flex;
+        .site{
+            padding: 80px 7px;
+            ul{
+                li{
+                    width: 40px;
+                    height: 40px;
+                    background-position: center center;
+                    background-size: cover;
+                    border-radius: 50%;
+                    margin-bottom: 20px;
+                    @media(min-width:1600px){
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                li:nth-of-type(1){background-image: url('../../../assets/img/N.jpg');}
+                li:nth-of-type(2){background-image: url('../../../assets/img/hulu.png');}
+                li:nth-of-type(3){background-color:#555;background-image: url('../../../assets/img/appleTV+.png');}
+                li:nth-of-type(4){background-image: url('../../../assets/img/disnep.jpg');}
+                li:nth-of-type(5){background-image: url('../../../assets/img/HBMax.webp');}
+                border-bottom: 1px solid #47444a73;
+            }
+            a{
+                margin-top: 20px;
+                background-color:#555;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                color:white;
+            }
+            @media (max-width:1100px){
+                display: none;
+            }
+        }
+        .menu_bar{
+            background-color: #1a161e;
+            padding: 40px 20px;
+            display: grid;
+            width: 200px;
+            @media (max-width:800px){
+                padding: 10px 0;
+                width: auto;
+            }
+            @media (min-width:1600px){
+                width: 250px;
+            }
+            .item{
+                padding: 15px 0;
+                border-bottom: 0.3px solid #47444a6c;
+                @media (max-width:800px){
+                    padding: 15px 5px;
+                }
+                p{
+                    font-size: 14px;
+                    color:#47444a;
+                    @media (max-width:800px){
+                        font-size: 12px;
+                        margin-bottom: 10px;
+                    }
+                    @media (min-width:1600px){
+                        font-size: 18px;
+                    } 
+                }
+                ul{
+                    padding: 0;
+                    li{
+                        display: block;
+                        a{
+                            color:#47444a;
+                            padding: 15px 0;
+                            display: block;
+                            font-size: 17px;
+                            @media (max-width:800px){
+                                padding: 0;
+                            }
+                            i{
+                                margin-right: 7px;
+                                @media (max-width:800px){
+                                    margin-right: 0;
+                                    display: block;
+                                    padding: 15px 0;
+                                    text-align: center;
+                                    font-size: 18px;
+                                }
+                                @media (min-width:1600px){
+                                    font-size: 20px;
+                                    margin-right: 10px;
+                                }
+                            }
+                            span{
+                                @media (max-width:800px) {
+                                    display: none;
+                                }
+                            }
+                            @media (min-width:1600px){
+                                font-size: 20px;
+                            }
+                            &:hover:not(.not_allowed){
+                                span{
+                                    color:#756e7c;
+                                }
+                                i{
+                                    color:#f13d434d
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+            
+            .bottom{
+                display: flex;
+                align-items: end;
+                .item{
+                    @media (max-width:800px){
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+    .routes{
+        overflow: hidden;
+        width: 100% ;
+    }
+    
+}

@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="menu">
+        <div class="site">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a href=""><i class="fa-solid fa-plus"></i></a>
+        </div>
+        <div class="menu_bar">
+            <div class="top">
+                <div class="item">
+                    <p>MENU</p>
+                    <ul>
+                        <li routerLink="home" routerLinkActive="active"><a><i class="fa-solid fa-house icon"></i> <span class="text">Home</span></a></li>
+                        <li routerLink="movies" routerLinkActive="active"><a><i class="fa-solid fa-play icon"></i> <span class="text">Movies</span></a></li>
+                        <li routerLink="series" routerLinkActive="active"><a><i class="fa-solid fa-film icon"></i><span class="text">Series</span></a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <p>LIBRARY</p>
+                    <ul>
+                        <li><a class="not_allowed" style="cursor: not-allowed;"><i class="fa-solid fa-clock"></i><span>Recent</span></a></li>
+                        <li><a class="not_allowed" style="cursor: not-allowed;"><i class="fa-solid fa-bookmark"></i><span>Bookmarked</span></a></li>
+                        <li><a class="not_allowed" style="cursor: not-allowed;"><i class="fa-solid fa-star"></i><span>Top rated</span></a></li>
+                        <li><a class="not_allowed" style="cursor: not-allowed;"><i class="fa-solid fa-download"></i><span>Downloaded</span></a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+                        <li><a class="not_allowed" style="cursor: not-allowed;"><i class="fa-solid fa-circle-info"></i><span>Help</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="item">
+                    <ul>
+                        <li><a><i class="fa-solid fa-right-from-bracket"></i><span>Signout</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="routes">
+        <router-outlet></router-outlet>
+    </div>
+</div>

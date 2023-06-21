@@ -1,0 +1,239 @@
+<div class="container">
+    <div class="head">
+        <div class="units">
+
+            <div class="unit">
+            <div class="item">
+                <img [src]="halfImg+movies[1][0].backdrop_path" alt="">
+               
+                <div class="info">
+                    <h1>{{movies[1][0].name}}</h1>
+                    <h3>{{year(movies[1][0].first_air_date)}}</h3>
+                    <div class="rated">
+                        <i [ngClass]="movies[1][0].vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[1][0].vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[1][0].vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[1][0].vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[1][0].vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <span>{{movies[1][0].vote_average/2 | number : '1.0-1'}}</span>
+                    </div>
+                    <div class="bottom">
+                        <div class="type">
+                            <ul>
+                                <li *ngFor="let genre of movies[1][0].genre_ids">
+                                    {{genress(genre)}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttonVisite">
+                            <a [routerLink]="['/shows/serieDetails',movies[1][0].id]" >Watch Now</a> 
+                        </div>
+                    </div>
+                </div>
+                    
+                
+            </div>
+            </div>
+
+
+            <div class="unit">
+            <div class="item">
+                <img [src]="halfImg+movies[2][1].backdrop_path" alt="">
+                
+                <div class="info">
+                    <h1>{{movies[2][1].name}}</h1>
+                    <h3>{{year(movies[2][1].first_air_date)}}</h3>
+                    <div class="rated">
+                        <i [ngClass]="movies[2][1].vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[2][1].vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[2][1].vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[2][1].vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <i [ngClass]="movies[2][1].vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                        <span>{{movies[2][1].vote_average/2 | number : '1.0-1'}}</span>
+                    </div>
+                    <div class="bottom">
+                        <div class="type">
+                            <ul>
+                                <li *ngFor="let genre of movies[2][1].genre_ids">
+                                    {{genress(genre)}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="buttonVisite">
+                            <a [routerLink]="['/shows/serieDetails',movies[2][1].id]" >Watch Now</a> 
+                        </div>
+                    </div>
+                </div>
+                    
+                
+            </div>
+            </div>
+        
+
+    </div>
+    </div>
+    <div class="content">
+        <div class="units">
+            <div class="unit">
+                <div class="headItem">
+                    <h1>Trending</h1>
+                    <a [routerLink]="['/shows/series','trend']">see more</a>
+                </div>
+                <div class="items">
+                    <div class="item" *ngFor="let movieTR of trend">
+                        <a [routerLink]="['/shows/serieDetails',movieTR.id]">
+                            <img [src]="halfImg+movieTR.poster_path" alt="">
+                        <div class="info">
+                            <h1>{{movieTR.name}}</h1>
+                            <div class="descs">
+                                <div class="year">
+                                    {{year(movieTR.first_air_date)}}
+                                </div>
+                                <div class="rated">
+                                    <i [ngClass]="movieTR.vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <span>{{movieTR.vote_average/2|number:'1.0-1'}}</span>
+                                </div>
+                                    <div class="type">
+                                        <ul>
+                                            <li *ngFor="let genre of movieTR.genre_ids">
+                                                {{genress(genre)}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                <p class="desc">
+                                    {{movieTR.overview|desc}}
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit">
+                <div class="headItem">
+                    <h1>Top Rated</h1>
+                    <a [routerLink]="['/shows/series','top_rated']">see more</a>
+                </div>
+                <div class="items">
+                    <div class="item" *ngFor="let movieTR of movies[1]">
+                        <a [routerLink]="['/shows/serieDetails',movieTR.id]">
+                            <img [src]="halfImg+movieTR.poster_path" alt="">
+                        <div class="info">
+                            <h1>{{movieTR.name}}</h1>
+                            <div class="descs">
+                                <div class="year">
+                                    {{year(movieTR.first_air_date)}}
+                                </div>
+                                <div class="rated">
+                                    <i [ngClass]="movieTR.vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <span>{{movieTR.vote_average/2|number:'1.0-1'}}</span>
+                                </div>
+                                    <div class="type">
+                                        <ul>
+                                            <li *ngFor="let genre of movieTR.genre_ids">
+                                                {{genress(genre)}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                <p class="desc">
+                                    {{movieTR.overview|desc}}
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit">
+                <div class="headItem">
+                    <h1>On The Air</h1>
+                    <a [routerLink]="['/shows/series','on_the_air']">see more</a>
+                </div>
+                <div class="items">
+                    <div class="item" *ngFor="let movieTR of movies[0]">
+                        <a [routerLink]="['/shows/serieDetails',movieTR.id]">
+                            <img [src]="halfImg+movieTR.poster_path" alt="">
+                        <div class="info">
+                            <h1>{{movieTR.name}}</h1>
+                            <div class="descs">
+                                <div class="year">
+                                    {{year(movieTR.first_air_date)}}
+                                </div>
+                                <div class="rated">
+                                    <i [ngClass]="movieTR.vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <span>{{movieTR.vote_average/2|number:'1.0-1'}}</span>
+                                </div>
+                                    <div class="type">
+                                        <ul>
+                                            <li *ngFor="let genre of movieTR.genre_ids">
+                                                {{genress(genre)}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                <p class="desc">
+                                    {{movieTR.overview|desc}}
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit">
+                <div class="headItem">
+                    <h1>popular</h1>
+                    <a [routerLink]="['/shows/series','popular']">see more</a>
+                </div>
+                <div class="items">
+                    <div class="item" *ngFor="let movieTR of movies[2]">
+                        <a [routerLink]="['/shows/serieDetails',movieTR.id]">
+                            <img [src]="halfImg+movieTR.poster_path" alt="">
+                        <div class="info">
+                            <h1>{{movieTR.name}}</h1>
+                            <div class="descs">
+                                <div class="year">
+                                    {{year(movieTR.first_air_date)}}
+                                </div>
+                                <div class="rated">
+                                    <i [ngClass]="movieTR.vote_average > 2 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 4 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 6 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average >= 8 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <i [ngClass]="movieTR.vote_average == 10 ? 'fa-solid fa-star' : 'fa-regular fa-star' "></i>
+                                    <span>{{movieTR.vote_average/2|number:'1.0-1'}}</span>
+                                </div>
+                                    <div class="type">
+                                        <ul>
+                                            <li *ngFor="let genre of movieTR.genre_ids">
+                                                {{genress(genre)}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                <p class="desc">
+                                    {{movieTR.overview|desc}}
+                                </p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

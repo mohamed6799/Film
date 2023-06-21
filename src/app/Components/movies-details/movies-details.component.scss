@@ -1,0 +1,413 @@
+.container{
+    .item{
+        height: 100vh;
+        overflow: auto;
+        position: relative;
+        .head{
+            background-position: center top;
+            background-size:cover;
+            background-repeat: no-repeat;
+            height: 60%;
+            position: relative;
+            &::after{
+                content:"";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 70%;
+                background:linear-gradient(0deg , #0d0c0f  , transparent)
+            }
+        }
+        .content{
+            position: absolute;
+            transform: translateY(-40%);
+            padding: 0 100px;
+            
+            @media(max-width:1700px){
+                padding: 0 20px;
+            }
+            @media(max-width:1000px){
+                transform: translateY(-30%);
+            }
+            @media(max-width:700px){
+                padding: 0 5px;
+                transform: translateY(-20%);
+            }
+            .text{
+                display: flex;
+                justify-content: space-between;
+                @media(max-width:1200px){
+                    display: block;
+                }
+                .one{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 75%;
+                    @media(max-width:1700px){
+                        width: 80%;
+                    }
+                    @media(max-width:1200px){
+                        width: 100%;
+                    }
+                    @media(max-width:600px){
+                        display: block;
+                    }
+                    .img_rated{
+                        img{
+                            width: 320px;
+                            display: block;
+                            border-radius: 10px;
+                            @media(max-width:1400px){
+                                width: 250px;
+                            }
+                            @media(max-width:1000px){
+                                width: 200px;
+                            }
+                            @media(max-width:600px){
+                                margin: auto;
+                            }
+                        }
+                    }
+                    .info{
+                        margin-left: 30px;
+                        padding: 30px 20px 30px 10px;
+                        @media(max-width:1400px){
+                            margin-left: 15px;
+                        }
+                        @media(max-width:1200px){
+                            padding: 30px 20px 10px 10px;
+                        }
+                        @media(max-width:600px){
+                            padding: 10px 5px ;
+                            margin:0;
+                        }
+                        h1{
+                            font-size: 40px;
+                            @media(max-width:1400px){
+                                font-size: 35px;
+                            }
+                            @media(max-width:600px){
+                                font-size: 25px;
+                            }
+                        }
+                        p{
+                            margin:10px 0;
+                            color: rgb(145, 143, 143);
+                            @media(max-width:1400px){
+                                margin: 0 0 10px 0;
+                                color:rgb(187, 187, 187);
+                            }
+                        }
+                        .underTitle{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 20px;
+                            @media(max-width:1400px){
+                                margin-bottom: 10px;
+                            }
+                            .list_watch{
+                                display: flex;
+                                align-items: center;
+                                button{
+                                    display: block;
+                                    padding: 10px 20px ;
+                                    color:white;
+                                    border: none;
+                                    outline: none;
+                                    font-size: 20px;
+                                    border-radius: 5px;
+                                    background-color:#ea1c24;
+                                    margin-right: 30px;
+                                    i{
+                                        margin-left: 5px;
+                                    }
+                                    @media(max-width:1000px){
+                                        padding: 5px 15px;
+                                        font-size: 16px;
+                                    }
+                                }
+                                .fav_data{
+                                    display: flex;
+                                    align-items: center;
+                                    .dataWatch{
+                                        position: relative;
+                                        color:white;
+                                        font-size: 18px;
+                                        margin-left: 20px;
+                                        border-radius: 50%;
+                                        background-color:rgba(255, 255, 255, 0.329);
+                                        @media(max-width:1600px){
+                                            font-size: 14px;
+                                        }
+                                        @media(max-width:1250px){
+                                            margin-left: 7px;
+                                            
+                                        }
+                                        @media(max-width:700px){
+                                            margin-left: 10px;
+                                            
+                                        }
+                                        .icon{
+                                            i{
+                                                display: block;
+                                                padding: 15px ;
+                                                font-size: 20px;
+                                                @media(max-width:1000px){
+                                                    padding: 10px;
+                                                }
+
+                                                @media(max-width:700px){
+                                                    font-size: 16px;
+
+                                                    padding: 8px;
+                                                }
+                                            }
+                                        }
+                                        .menu{
+                                            display: none;
+                                            width: 200px;
+                                            bottom: 130%;
+                                            right: 0;
+                                            border-radius: 5px;
+                                            position: absolute;
+                                            background-color:#0d0c0f;
+                                            color:white;
+                                            ul{
+                                                li{
+                                                    border-bottom: 1px solid rgba(255, 255, 255, 0.158);
+                                                    &:last-child{
+                                                        border:none;
+                                                    }
+                                                    label{
+                                                        display: flex;
+                                                        align-items: center;
+                                                        padding: 10px 15px;
+                                                        font-size: 18px;
+                                                        @media(max-width:1500px){
+                                                            font-size: 16px;
+                                                            padding: 7px 10px;
+                                                        }
+                                                        @media(max-width:1250px){
+                                                            font-size: 14px;
+                                                            padding: 7px 10px;
+                                                        }
+                                                        @media(max-width:700px){
+                                                            padding: 10px ;
+                                                            font-size: 18px;
+                                                        }
+                                                        i{
+                                                            color:rgb(14, 14, 73);
+                                                            margin-right: 10px;
+                                                            font-size: 25px;
+                                                        }
+                                                        &:hover{
+                                                            background-color:#333;
+                                                        }
+                                                        
+                                                    }
+                                                    input[type="checkbox"]:checked ~ label{
+                                                        background-color:#ea1c24;
+                                                    }
+                                                }
+                                            }
+                                            @media(max-width:1700px){
+                                                width: 160px;
+                                                right: -5px;
+                                            }
+                                            @media(max-width:1250px){
+                                                width: 150px;
+                                            }
+                                            @media(max-width:700px){
+                                                width: 170px;
+                                            }
+                                            @media(max-width:450px){
+                                                width: 180px;
+                                            }
+                                            &::before{
+                                                content: "";
+                                                position: absolute;
+                                                top: 100%;
+                                                right: 10px;
+                                                border:10px solid ;
+                                                border-color:#0d0c0f transparent transparent transparent;
+                                            }
+                                        }
+                                        input[type="checkbox"]:checked ~ .menu{
+                                            display: block;
+                                        }
+                                    }
+                                    .favorite{
+                                        font-size: 30px;
+                                        color:rgba(255, 255, 255, 0.329);
+                                        @media(max-width:1250px){
+                                            font-size: 25px;
+                                        }
+                                        @media(max-width:700px){
+                                            font-size: 30px;
+                                        }
+                                        input[type="checkbox"]:checked ~ label i{
+                                            color:#ea1c24 ;
+                                        }
+                                    }
+                                }
+                            }
+                            .rated{
+                                p{
+                                    font-size: 20px;
+                                    i{
+                                        margin-right: 10px;
+                                    }
+                                    @media(max-width:700px){
+                                        font-size: 16px;
+                                        i{
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .view{
+                            font-size: 19px;
+                            @media(max-width:1400px){
+                                font-size: 15px;
+                            }
+                        }
+                        .details{
+                            margin-top: 20px;
+                            @media(max-width:1400px){
+                                margin-top: 10px;
+                            }
+                            ul{
+                                li{
+                                    
+                                    display: flex;
+                                    align-items: center;
+                                    border-bottom: 1px solid rgb(94,93,93);
+                                    padding: 15px 0;
+                                    
+                                    &:last-child{
+                                        border:none
+                                    }
+                                    h3{
+                                        width:40%;
+                                        @media(max-width:600px){
+                                            width: 50%;
+                                        }
+                                        @media(max-width:350px){
+                                            width: 40%;
+                                        }
+                                    }
+                                    .cont{
+                                        width: 100%;
+                                        ul{
+                                            @media(max-width:1000px){
+                                                display: flex;
+                                                justify-content:start;
+                                                align-items: center;
+                                                width: 100%;
+                                            }
+                                            li{
+                                                display: inline-block;
+                                                padding: 5px 15px;
+                                                border-radius: 20px;
+                                                background-color: rgb(94, 93, 93);
+                                                margin-right: 20px;
+                                                @media(max-width:1700px){
+                                                    margin-right: 10px;
+                                                }
+                                                @media(max-width:1000px){
+                                                    padding: 5px 10px;
+                                                    font-size: 13px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .cast{
+                    padding: 30px 10px;
+                    h1{
+                        margin-bottom: 30px;
+                        font-size: 25px;
+                        @media(max-width:1400px){
+                            margin-bottom: 20px;
+                            font-size: 20px;
+                        }
+                    }
+                    ul{
+                        @media(max-width:1200px){
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            flex-wrap: wrap; 
+                        }
+                        @media(max-width:1000px){
+                            justify-content: start;
+                        }
+                        li{
+                            margin-bottom: 20px;
+                            @media(max-width:1400px){
+                                margin-bottom: 5px;
+                            }
+                            @media(max-width:1000px){
+                                width: 33%;
+                                margin-bottom: 10px;
+                            }
+                            @media(max-width:700px){
+                                width: 50%;
+                            }
+                            @media(max-width:500px){
+                                width: 100%;
+                            }
+                            
+                            .art{
+                                display: flex;
+                                align-items: center;
+                                
+                                img{
+                                    width: 60px ;
+                                    height: 60px ;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                    @media(max-width:1400px){
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+
+                                }
+                                .name{
+                                    p{
+                                        &:first-child{
+                                            font-size: 18px;
+                                            margin-bottom: 5px;
+                                            @media(max-width:1400px){
+                                                font-size: 14px;
+                                                margin-bottom: 2px;
+                                            }
+                                        }
+                                        &:last-child{
+                                            font-size: 15px;
+                                            color:rgb(148, 148, 148);
+                                            @media(max-width:1400px){
+                                                font-size: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-of-type(n+6){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
